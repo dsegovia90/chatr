@@ -1,12 +1,7 @@
 <script lang="ts">
-	import { createChannel, type Channel, getChannels, subscribeToChannel } from '$lib/models/channel';
+	import { createChannel } from '$lib/models/channel';
 	import { user } from '$lib/store/user';
 	import { channels } from '$lib/store/channels';
-	import { onMount } from 'svelte';
-
-	onMount(async () => {
-
-	});
 
 	const handleCreateChannel = async () => {
 	let lastChannel = 'Channel1';
