@@ -70,7 +70,7 @@
 							<p class="text-xs font-bold opacity-80">{message.createdBy.name.first}</p>
 						{/if}
 						<p>{message.text}</p>
-						<p class="text-xs text-right">{parseDate(message.created)}</p>
+						<p class="text-xs text-right opacity-70">{parseDate(message.created)}</p>
 					</div>
 				</div>
 			{/each}
