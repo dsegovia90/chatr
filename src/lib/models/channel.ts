@@ -28,8 +28,8 @@ export const createChannel = async ({ name }: { name: string }): Promise<Channel
 
 export const getChannels = async (): Promise<Map<Channel['id'], Channel>> => {
 	const [result] = await db.query<Channel[]>('SELECT * FROM channel ORDER BY created ASC;');
-	const channels = result.result as unknown as Channel[]
-	const map = new Map(channels.map((item) => [item.id, item]))
+	const channels = result.result as unknown as Channel[];
+	const map = new Map(channels.map((item) => [item.id, item]));
 
 	return map;
 };

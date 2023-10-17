@@ -21,7 +21,7 @@
 	const scrollToBottom = async () => {
 		await tick();
 		scroller?.scroll({ top: scroller.scrollHeight, behavior: firstScroll ? 'instant' : 'smooth' });
-		firstScroll = false
+		firstScroll = false;
 	};
 
 	$: {

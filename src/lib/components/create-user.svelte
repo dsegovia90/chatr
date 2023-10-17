@@ -11,12 +11,12 @@
 
 	const handleCreateUser = async () => {
 		if (!userToCreate || creating) return;
-    creating = true
+		creating = true;
 
 		const createdUser = await createUser({ first: userToCreate });
 		user.set(createdUser);
 		goto('/app');
-    creating = false
+		creating = false;
 	};
 </script>
 
@@ -26,7 +26,7 @@
 			<label class="block mb-2 text-lg" for="user-name">User Name</label>
 			<input id="user-name" class="px-8 py-4" type="text" bind:value={userToCreate} />
 		</div>
-		<Button type="submit" text="Create" class="mb-4" disabled={creating}/>
-		<Button text="Back" variant="light" on:click={toggleCreatingUser} disabled={creating}/>
+		<Button type="submit" text="Create" class="mb-4" disabled={creating} />
+		<Button text="Back" variant="light" on:click={toggleCreatingUser} disabled={creating} />
 	</form>
 </div>

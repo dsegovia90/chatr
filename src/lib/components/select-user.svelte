@@ -19,15 +19,13 @@
 
 	const handleSelectUser = (selectedUser: User) => {
 		user.set(selectedUser);
-    goto('/app')
+		goto('/app');
 	};
-
-
 </script>
 
 <div class="flex gap-4 justify-evenly p-12 border rounded-xl bg-gray-200 {$$props.class}">
 	{#if creatingUser}
-		<CreateUser {toggleCreatingUser}/>
+		<CreateUser {toggleCreatingUser} />
 	{:else}
 		<Avatar displayName="New User" iconOverride="+" on:click={toggleCreatingUser} />
 		{#each users as userItem}
