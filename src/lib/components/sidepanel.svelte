@@ -15,7 +15,7 @@
 	};
 </script>
 
-<div class="w-[300px] p-6">
+<div class="w-[300px] p-6 flex-shrink-0">
 	<h1 class="text-center mb-4 text-4xl">Chatr</h1>
 	<p class="mb-10">Hello {$user.name.first}!</p>
 
