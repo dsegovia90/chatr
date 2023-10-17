@@ -48,7 +48,6 @@ export const getChannelMessages = async ({
 	const messages = result.result as unknown as QueriedMessage[];
 	const map = new Map(messages.map((item) => [item.id, item]));
 
-
 	return map;
 };
 
@@ -58,18 +57,22 @@ export const subscribeToMessage = async (
 	// diff = false
 ) => {
 	const [res] = await db.query<[string]>(
-		'LIVE SELECT *, createdBy.* FROM message;',
-		{
-			channel
-		}
+		`LIVE SELECT *, createdBy.* FROM message WHERE channel == ${channel};`
 	);
+	// NOTE: The code below is not working in surrealdb 1.0
+	// const [res] = await db.query<[string]>(
+	// 	`LIVE SELECT *, createdBy.* FROM message WHERE channel == ${channel};`,
+	// 	{
+	// 		channel
+	// 	}
+	// );
 
 	const queryId = res.result!;
 
 	await db.listenLive(queryId, cb);
-	return queryId
+	return queryId;
 };
 
 export const killMessageStream = (queryId: string) => {
-	db.kill(queryId)
-}
+	db.kill(queryId);
+};
