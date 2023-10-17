@@ -31,7 +31,7 @@ export const createMessage = async ({
 export type QueriedMessage = {
 	text: string;
 	createdBy: User;
-	created: Date;
+	created: string;
 	channel: string;
 	id: string;
 };
