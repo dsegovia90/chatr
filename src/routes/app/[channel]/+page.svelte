@@ -36,9 +36,9 @@
 	});
 
 	const parseDate = (dateString: string): string => {
-		const date = new Date(dateString)
-		return `${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`
-	}
+		const date = new Date(dateString);
+		return `${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`;
+	};
 
 	const handleSendMessage = async () => {
 		if (sendingMessage) return;
