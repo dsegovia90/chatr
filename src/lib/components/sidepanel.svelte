@@ -6,7 +6,7 @@
 	const handleCreateChannel = async () => {
 		let lastChannel = 'Channel1';
 		if ($channels.size) {
-			const [_, last] = Array.from($channels.entries())[$channels.size - 1];
+			const [, last] = Array.from($channels.entries())[$channels.size - 1];
 			const int = parseInt(last.name.replace(/[^0-9]/g, ''));
 			lastChannel = `Channel${int + 1}`;
 		}
